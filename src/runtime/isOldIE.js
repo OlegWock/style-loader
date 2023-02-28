@@ -8,7 +8,7 @@ function isOldIE() {
     // Tests for existence of standard globals is to allow style-loader
     // to operate correctly into non-standard environments
     // @see https://github.com/webpack-contrib/style-loader/issues/177
-    memo = Boolean(window && document && document.all && !window.atob);
+    memo = Boolean(typeof windows !== 'undefined' && window && typeof document !== 'undefined' && document && document.all && !window.atob);
   }
 
   return memo;

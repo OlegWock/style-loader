@@ -12,6 +12,8 @@ module.exports = (url, options) => {
     }
   }
 
+  if (typeof document === 'undefined') return () => {};
+
   const linkElement = document.createElement("link");
 
   linkElement.rel = "stylesheet";

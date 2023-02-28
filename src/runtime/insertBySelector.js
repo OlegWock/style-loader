@@ -28,6 +28,8 @@ function getTarget(target) {
 
 /* istanbul ignore next  */
 function insertBySelector(insert, style) {
+  if (typeof document === 'undefined') return;
+  
   const target = getTarget(insert);
 
   if (!target) {
