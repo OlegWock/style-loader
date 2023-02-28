@@ -54,6 +54,12 @@ function removeStyleElement(styleElement) {
 
 /* istanbul ignore next  */
 function domAPI(options) {
+  if (typeof document === 'undefined') {
+    return {
+      update: () => {},
+      remove: () => {},
+    };
+  }
   const styleElement = options.insertStyleElement(options);
 
   return {
